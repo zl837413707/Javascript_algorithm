@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function quickSort(arr) {
+        const { length } = arr;
+        if (length < 2) {
+          return arr;
+        }
+        const base = arr[0];
+        let left = arr.slice(1).filter((item) => item < base);
+        let right = arr.slice(1).filter((item) => item > base);
+        return quickSort(left).concat(base).concat(quickSort(right));
+      }
+
+      console.log(quickSort([3, 5, 4, 2, 1, 6]));
+    </script>
+  </body>
+</html>
